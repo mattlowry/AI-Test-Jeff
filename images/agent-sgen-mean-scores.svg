@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" rx="12" fill="#ffffff" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Inter, sans-serif" font-size="24" font-weight="700" text-anchor="middle" fill="#2c3437">Mean Likert Scores by Evaluation Metric</text>
+  
+  <!-- Subtitle -->
+  <text x="400" y="70" font-family="Inter, sans-serif" font-size="16" font-weight="500" text-anchor="middle" fill="#4d5559">Comparison of Generation Methods (5-point Likert Scale)</text>
+  
+  <!-- Y-axis -->
+  <g transform="translate(100, 120)">
+    <line x1="0" y1="0" x2="0" y2="300" stroke="#a0a8b3" stroke-width="2" />
+    
+    <!-- Y-axis ticks and labels -->
+    <line x1="-5" y1="0" x2="0" y2="0" stroke="#a0a8b3" stroke-width="2" />
+    <text x="-10" y="5" font-family="Inter, sans-serif" font-size="12" text-anchor="end" fill="#4d5559">5</text>
+    
+    <line x1="-5" y1="60" x2="0" y2="60" stroke="#a0a8b3" stroke-width="2" />
+    <text x="-10" y="65" font-family="Inter, sans-serif" font-size="12" text-anchor="end" fill="#4d5559">4</text>
+    
+    <line x1="-5" y1="120" x2="0" y2="120" stroke="#a0a8b3" stroke-width="2" />
+    <text x="-10" y="125" font-family="Inter, sans-serif" font-size="12" text-anchor="end" fill="#4d5559">3</text>
+    
+    <line x1="-5" y1="180" x2="0" y2="180" stroke="#a0a8b3" stroke-width="2" />
+    <text x="-10" y="185" font-family="Inter, sans-serif" font-size="12" text-anchor="end" fill="#4d5559">2</text>
+    
+    <line x1="-5" y1="240" x2="0" y2="240" stroke="#a0a8b3" stroke-width="2" />
+    <text x="-10" y="245" font-family="Inter, sans-serif" font-size="12" text-anchor="end" fill="#4d5559">1</text>
+    
+    <line x1="-5" y1="300" x2="0" y2="300" stroke="#a0a8b3" stroke-width="2" />
+    <text x="-10" y="305" font-family="Inter, sans-serif" font-size="12" text-anchor="end" fill="#4d5559">0</text>
+    
+    <!-- Y-axis label -->
+    <text x="-60" y="150" font-family="Inter, sans-serif" font-size="14" font-weight="700" transform="rotate(-90, -60, 150)" text-anchor="middle" fill="#2c3437">Mean Score</text>
+  </g>
+  
+  <!-- X-axis -->
+  <g transform="translate(100, 420)">
+    <line x1="0" y1="0" x2="600" y2="0" stroke="#a0a8b3" stroke-width="2" />
+    
+    <!-- X-axis category labels -->
+    <text x="100" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="500" text-anchor="middle" fill="#2c3437">Realism</text>
+    <text x="250" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="500" text-anchor="middle" fill="#2c3437">Coherence</text>
+    <text x="400" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="500" text-anchor="middle" fill="#2c3437">Prompt Alignment</text>
+    <text x="550" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="500" text-anchor="middle" fill="#2c3437">Visual Quality</text>
+  </g>
+  
+  <!-- Grid lines -->
+  <g transform="translate(100, 120)" stroke="#e1e5ea" stroke-width="1" stroke-dasharray="5,5">
+    <line x1="0" y1="60" x2="600" y2="60" />
+    <line x1="0" y1="120" x2="600" y2="120" />
+    <line x1="0" y1="180" x2="600" y2="180" />
+    <line x1="0" y1="240" x2="600" y2="240" />
+    <line x1="0" y1="300" x2="600" y2="300" />
+  </g>
+  
+  <!-- Bar Group 1: Realism -->
+  <g transform="translate(100, 120)">
+    <!-- Baseline Bar -->
+    <rect x="70" y="90" width="30" height="210" rx="4" fill="#a0a8b3" />
+    <!-- AgentSGEN Bar -->
+    <rect x="110" y="30" width="30" height="270" rx="4" fill="#4a7cff" />
+  </g>
+  
+  <!-- Bar Group 2: Coherence -->
+  <g transform="translate(100, 120)">
+    <!-- Baseline Bar -->
+    <rect x="220" y="105" width="30" height="195" rx="4" fill="#a0a8b3" />
+    <!-- AgentSGEN Bar -->
+    <rect x="260" y="20" width="30" height="280" rx="4" fill="#4a7cff" />
+  </g>
+  
+  <!-- Bar Group 3: Prompt Alignment -->
+  <g transform="translate(100, 120)">
+    <!-- Baseline Bar -->
+    <rect x="370" y="120" width="30" height="180" rx="4" fill="#a0a8b3" />
+    <!-- AgentSGEN Bar -->
+    <rect x="410" y="40" width="30" height="260" rx="4" fill="#4a7cff" />
+  </g>
+  
+  <!-- Bar Group 4: Visual Quality -->
+  <g transform="translate(100, 120)">
+    <!-- Baseline Bar -->
+    <rect x="520" y="100" width="30" height="200" rx="4" fill="#a0a8b3" />
+    <!-- AgentSGEN Bar -->
+    <rect x="560" y="45" width="30" height="255" rx="4" fill="#4a7cff" />
+  </g>
+  
+  <!-- Bar Labels: Realism -->
+  <g transform="translate(100, 120)" fill="#2c3437" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">
+    <text x="85" y="85" font-weight="700">3.5</text>
+    <text x="125" y="25" font-weight="700">4.5</text>
+  </g>
+  
+  <!-- Bar Labels: Coherence -->
+  <g transform="translate(100, 120)" fill="#2c3437" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">
+    <text x="235" y="100" font-weight="700">3.2</text>
+    <text x="275" y="15" font-weight="700">4.7</text>
+  </g>
+  
+  <!-- Bar Labels: Prompt Alignment -->
+  <g transform="translate(100, 120)" fill="#2c3437" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">
+    <text x="385" y="115" font-weight="700">3.0</text>
+    <text x="425" y="35" font-weight="700">4.3</text>
+  </g>
+  
+  <!-- Bar Labels: Visual Quality -->
+  <g transform="translate(100, 120)" fill="#2c3437" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">
+    <text x="535" y="95" font-weight="700">3.3</text>
+    <text x="575" y="40" font-weight="700">4.2</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(350, 460)">
+    <!-- Baseline Legend Item -->
+    <rect x="-100" y="0" width="16" height="16" rx="2" fill="#a0a8b3" />
+    <text x="-75" y="12" font-family="Inter, sans-serif" font-size="14" fill="#2c3437">Baseline</text>
+    
+    <!-- AgentSGEN Legend Item -->
+    <rect x="50" y="0" width="16" height="16" rx="2" fill="#4a7cff" />
+    <text x="75" y="12" font-family="Inter, sans-serif" font-size="14" fill="#2c3437">AgentSGEN</text>
+  </g>
+</svg>
