@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimodal AI in Healthcare - AIForecast</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+    <style>
+        .transcript-section {
+            background-color: var(--surface-primary);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-primary);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .transcript-timestamp {
+            color: var(--accent-primary);
+            font-weight: 600;
+            margin-top: var(--spacing-md);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .transcript-content {
+            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+        }
+        
+        .transcript-stage-direction {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .code-container {
+            background-color: var(--background-secondary);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-primary);
+            margin: var(--spacing-md) 0;
+            overflow: hidden;
+        }
+        
+        .code-header {
+            background-color: var(--surface-secondary);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-bottom: 1px solid var(--border-primary);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .code-content {
+            padding: var(--spacing-md);
+            overflow-x: auto;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--text-primary);
+        }
+        
+        .chart-container {
+            position: relative;
+            margin: var(--spacing-lg) 0;
+            height: 400px;
+            width: 100%;
+            background-color: var(--surface-primary);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-primary);
+            padding: var(--spacing-lg);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .interactive-button {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: var(--background-primary);
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all var(--transition-normal);
+            margin-top: var(--spacing-md);
+        }
+        
+        .interactive-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,255,255,0.2);
+        }
+        
+        .case-study-heading {
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--accent-primary);
+            padding-bottom: var(--spacing-xs);
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .flowchart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .flowchart-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: var(--spacing-md) 0;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        
+        .flowchart-item {
+            background-color: var(--surface-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-sm) var(--spacing-md);
+            margin: var(--spacing-xs);
+            min-width: 120px;
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .flowchart-item:hover {
+            background-color: var(--surface-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-color: var(--accent-primary);
+        }
+        
+        .flowchart-arrow {
+            display: flex;
+            justify-content: center;
+            margin: var(--spacing-sm) 0;
+        }
+        
+        .flowchart-arrow svg {
+            fill: var(--accent-primary);
+            width: 24px;
+            height: 24px;
+        }
+        
+        .main-node {
+            background: linear-gradient(135deg, var(--accent-primary-dark), var(--accent-secondary));
+            color: var(--background-primary);
+            padding: var(--spacing-md) var(--spacing-lg);
+            font-weight: 600;
+        }
+        
+        .input-node {
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .output-node {
+            border-right: 4px solid #FF9800;
+        }
+    </style>
+</head>
+<body>
+    <header class="subpage-header">
+        <nav>
+            <div class="logo">AI<span>Forecast</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html#overview">Overview</a></li>
+                <li><a href="index.html#capabilities">Capabilities</a></li>
+                <li><a href="index.html#timeline">Timeline</a></li>
+                <li><a href="index.html#industries">Industries</a></li>
+                <li><a href="index.html#ethics">Ethics</a></li>
+                <li><a href="warnings.html">Expert Warnings</a></li>
+                <li><a href="models.html">AI Models</a></li>
+                <li><a href="supercomputing.html">Supercomputing</a></li>
+                <li><a href="agentSGEN.html">AgentSGEN</a></li>
+                <li><a href="aichat.html">AI Chat</a></li>
+                <li><a href="industry-case-study.html">Case Study</a></li>
+                <li><a href="multimodal-ai.html" class="active">Multimodal AI</a></li>
+            </ul>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="hero">
+            <h1>Multimodal AI in Healthcare</h1>
+            <h2>Revolutionizing Medical Practice through Advanced AI Integration</h2>
+            <p>Based on Conor Judge's TEDx Talk on how multimodal AI could transform healthcare delivery by rebalancing the 70/30 split between data collection and patient care</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">The 70/30 Problem in Healthcare</h2>
+                <p class="section-subtitle">Understanding the imbalance in how healthcare is delivered</p>
+                
+                <div class="section-content">
+                    <div class="text-content">
+                        <p class="lead">In today's healthcare systems, medical professionals spend approximately 70% of their time collecting information about patients and only 30% making decisions and communicating with patients. This imbalance has serious implications for both healthcare providers and patients.</p>
+                        <p>Dr. Conor Judge, who works as a medical consultant and senior lecturer in applied clinical data analytics, highlights this issue in his TEDx talk. This inefficient split means doctors have less face-to-face time with patients—precisely the aspect of care they were trained to deliver and that patients value most.</p>
+                        <p>This problem has been exacerbated by electronic health record systems, which were primarily designed for billing rather than for making healthcare more efficient. The additional administrative burden further reduces the quality time doctors can spend with their patients.</p>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <h3 style="text-align: center; margin-bottom: var(--spacing-md);">Current vs. Potential Doctor's Time Allocation</h3>
+                        <canvas id="timeSplitChart"></canvas>
+                        <button id="toggleAiButton" class="interactive-button">Show Hypothetical AI Impact</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section dark">
+            <div class="container">
+                <h2 class="section-title">Understanding Multimodal AI</h2>
+                <p class="section-subtitle">A new approach to combining different types of medical data</p>
+                
+                <div class="section-content">
+                    <div class="text-content">
+                        <p>Multimodal AI represents a significant advancement over single-modal AI systems. While technologies like ChatGPT have garnered substantial public attention, they typically process only one type of data (text). In contrast, multimodal AI can process and analyze multiple forms of data simultaneously: text, images, and numbers.</p>
+                        <p>This capability mirrors how doctors work—they talk to patients, listen to their concerns, examine them physically, analyze test results, and review medical imaging. This synthesis of different information streams is what Dr. Judge calls "multimodal human intelligence," and its artificial counterpart is now becoming increasingly sophisticated.</p>
+                    </div>
+                    
+                    <div class="flowchart-container">
+                        <h3 style="text-align: center; margin-bottom: var(--spacing-md);">Multimodal AI Architecture</h3>
+                        
+                        <div class="flowchart-row">
+                            <div class="flowchart-item input-node">Text Data</div>
+                            <div class="flowchart-item input-node">Image Data</div>
+                            <div class="flowchart-item input-node">Numerical Data</div>
+                            <div class="flowchart-item input-node">Genomic Data</div>
+                            <div class="flowchart-item input-node">Audio Data</div>
+                        </div>
+                        
+                        <div class="flowchart-arrow">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="flowchart-row">
+                            <div class="flowchart-item main-node">Multimodal AI Model</div>
+                        </div>
+                        
+                        <div class="flowchart-arrow">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="flowchart-row">
+                            <div class="flowchart-item output-node">Diagnostics</div>
+                            <div class="flowchart-item output-node">Treatment Plans</div>
+                            <div class="flowchart-item output-node">Risk Assessments</div>
+                            <div class="flowchart-item output-node">Medical Q&A</div>
+                            <div class="flowchart-item output-node">Report Generation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Cutting-Edge Examples in Healthcare</h2>
+                <p class="section-subtitle">Real applications of AI that are transforming medical practice</p>
+                
+                <div class="card-grid three-column">
+                    <div class="card">
+                        <div class="card-icon">🫁</div>
+                        <h3>Oxipit ChestLink</h3>
+                        <p>AI system for autonomous chest X-ray analysis, capable of detecting 75 different abnormalities. It has received regulatory approval to autonomously report normal X-rays without human oversight.</p>
+                        <p><strong>Impact:</strong> Radiologists can focus on abnormal cases, significantly reducing workload while maintaining diagnostic quality.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">👁️</div>
+                        <h3>Retinal Analysis AI</h3>
+                        <p>Developed at University College London, this AI analyzes images of the retina to diagnose eye diseases and predict outcomes. Remarkably, it can also predict Parkinson's disease years before symptoms appear.</p>
+                        <p><strong>Impact:</strong> Early detection capabilities beyond what human specialists can observe, enabling preventive interventions.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">🧠</div>
+                        <h3>Med-PaLM 2</h3>
+                        <p>Google's medical large language model has achieved expert-level performance on the US medical licensing exam with a score of 86.5%, surpassing the prior version's passing score of 67.2% in just three months.</p>
+                        <p><strong>Impact:</strong> Demonstrates AI's growing capacity for complex medical reasoning and knowledge application.</p>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3 style="text-align: center; margin-bottom: var(--spacing-md);">LLM Performance on Medical Licensing Exams</h3>
+                    <canvas id="llmPerformanceChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="section dark">
+            <div class="container">
+                <h2 class="section-title">The Future: Med-PaLM M</h2>
+                <p class="section-subtitle">Google's multimodal medical AI represents a significant breakthrough</p>
+                
+                <div class="section-content">
+                    <div class="text-content">
+                        <p>Med-PaLM M, released by Google in July 2023, represents the convergence of various AI capabilities into a truly multimodal medical AI system. It can analyze multiple types of medical data including mammography images, pathology slides, radiographs, genomic data, and medical text.</p>
+                        <p>The system can perform diverse tasks such as medical question answering, image classification, radiology report generation, and genomic variant calling. In tests, blinded assessors preferred the AI-generated radiology reports to human-written ones in 40% of cases.</p>
+                        <p>While not perfect, this demonstrates the potential for multimodal AI to augment medical professionals' capabilities, potentially allowing them to spend more time on patient care rather than documentation and data analysis.</p>
+                    </div>
+                    
+                    <div class="infographic">
+                        <h3 style="text-align: center; margin-bottom: var(--spacing-lg);">Med-PaLM M Multimodal Capabilities</h3>
+                        <div class="flowchart-container">
+                            <div class="flowchart-row">
+                                <div class="flowchart-item input-node">Mammography</div>
+                                <div class="flowchart-item input-node">Radiographs</div>
+                                <div class="flowchart-item input-node">Pathology</div>
+                            </div>
+                            <div class="flowchart-row">
+                                <div class="flowchart-item input-node">Radiology Reports</div>
+                                <div class="flowchart-item input-node">Medical Knowledge</div>
+                                <div class="flowchart-item input-node">Genomics</div>
+                            </div>
+                            
+                            <div class="flowchart-arrow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                </svg>
+                            </div>
+                            
+                            <div class="flowchart-row">
+                                <div class="flowchart-item main-node">Med-PaLM M</div>
+                            </div>
+                            
+                            <div class="flowchart-arrow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                </svg>
+                            </div>
+                            
+                            <div class="flowchart-row">
+                                <div class="flowchart-item output-node">Medical Q&A</div>
+                                <div class="flowchart-item output-node">Visual Q&A</div>
+                                <div class="flowchart-item output-node">Image Classification</div>
+                            </div>
+                            <div class="flowchart-row">
+                                <div class="flowchart-item output-node">Report Summarization</div>
+                                <div class="flowchart-item output-node">Report Generation</div>
+                                <div class="flowchart-item output-node">Genomic Variant Calling</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Implementation Challenges</h2>
+                <p class="section-subtitle">Critical factors for safe and effective medical AI adoption</p>
+                
+                <div class="section-content">
+                    <div class="card-grid three-column">
+                        <div class="card">
+                            <div class="card-icon">🔒</div>
+                            <h3>Trust</h3>
+                            <p>A US survey found that over 50% of respondents would feel anxious knowing their healthcare provider was relying on AI for treatment decisions. Even more concerning, 75% feared that doctors would integrate AI too quickly without understanding the risks.</p>
+                            <p>Building public trust through transparency and progressive implementation will be crucial for AI adoption in healthcare.</p>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-icon">💡</div>
+                            <h3>Explainability</h3>
+                            <p>Opening the "black box" of AI decision-making is essential in healthcare. Understanding why an AI model recommends a particular treatment helps avoid confirmation bias and ensures appropriate oversight.</p>
+                            <p>Explainable AI that provides reasoning for its outputs will be a key factor in responsible implementation.</p>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-icon">🧪</div>
+                            <h3>Clinical Trials</h3>
+                            <p>AI systems must be subjected to the same rigorous testing as medications. Randomized control trials comparing outcomes between AI-assisted and conventional care are essential.</p>
+                            <p>Only through proper clinical validation can we ensure these technologies actually improve patient outcomes rather than just changing workflows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section dark">
+            <div class="container">
+                <h2 class="section-title">The Missing Piece: The Art of Medicine</h2>
+                <p class="section-subtitle">Integrating human expertise with AI capabilities</p>
+                
+                <div class="section-content">
+                    <div class="text-content">
+                        <p>Medical training emphasizes "looking at the patient" before interpreting test results or imaging. This holistic assessment—sometimes called the "eyeball test"—has been shown to be remarkably accurate. For instance, nurses in emergency departments can effectively triage patients as red, yellow, or green simply by looking at them, often outperforming sophisticated models.</p>
+                        <p>Dr. Judge envisions a future where videos or images of patients could also be incorporated into multimodal AI systems, adding another critical dimension to their analytical capabilities. However, he emphasizes that AI should function as a tool to free medical professionals to spend more time on the compassionate, human elements of care.</p>
+                        <p>The ideal scenario is not AI replacing doctors, but rather AI handling the information-gathering tasks that currently consume 70% of healthcare professionals' time. This would allow them to devote more attention to decision-making, communicating with patients, and providing the human connection that remains essential to effective healthcare.</p>
+                    </div>
+                    
+                    <div class="call-to-action">
+                        <h3>The Promise of Multimodal AI</h3>
+                        <p>Multimodal AI in healthcare offers a transformative opportunity to rebalance the 70/30 split, returning valuable time to patient care. By handling complex data analysis across different modalities, AI could help make healthcare more efficient, personalized, and accessible—even in remote regions with limited access to specialists.</p>
+                        <p>The key is developing these technologies with careful attention to trust, explainability, and rigorous validation, while ensuring they enhance rather than replace the irreplaceable human elements of compassion and understanding in healthcare.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Full Transcript and Demonstrations</h2>
+                <p class="section-subtitle">Explore the complete TEDx talk and interactive demonstrations</p>
+                
+                <h3 class="case-study-heading">TEDx Talk Transcript</h3>
+                <p>The full transcript of Conor Judge's TEDx Galway talk on multimodal AI in healthcare:</p>
+                
+                <div class="transcript-section">
+                    <div class="transcript-timestamp">[00:00:00 - 00:00:13]</div>
+                    <div class="transcript-stage-direction">(Upbeat, inspiring music plays over a montage of Galway city scenes: aerial view of Galway Cathedral, people walking in Eyre Square with flags, the Town Hall Theatre exterior, TEDx Galway stage setup, and sponsor logos: StauntonMedia, Il Vicolo, Supply.ie.)</div>
+                    
+                    <div class="transcript-timestamp">[00:00:14 - 00:00:20]</div>
+                    <div class="transcript-stage-direction">(Conor Judge walks onto the TEDx Galway stage. He is wearing a suit and has a microphone.)</div>
+                    <div class="transcript-content">The last time I stood on this stage in the Town Hall Theatre was 26 years ago.</div>
+                    
+                    <div class="transcript-timestamp">[00:00:21 - 00:00:26]</div>
+                    <div class="transcript-content">I was a handsome 12-year-old boy.</div>
+                    
+                    <div class="transcript-timestamp">[00:00:26 - 00:00:48]</div>
+                    <div class="transcript-stage-direction">(A picture of a young Conor Judge, wearing a hat and trench coat, appears on the screen behind him. Text overlay: "NOVEMBER 2023" and "GALWAY IRELAND".)</div>
+                    <div class="transcript-content">I was in a drama competition for national schools, in a play written by my best friend. In that play, I was a detective trying to solve a mystery of who robbed a fictional hotel. The hotel was called Hotel El Cheapo Non-Steepo.</div>
+                    
+                    <div class="transcript-timestamp">[00:00:49 - 00:01:00]</div>
+                    <div class="transcript-content">I was also a boy with a stammer or a speech impediment, and I was desperately trying to both remember and say my lines.</div>
+                    
+                    <div class="transcript-timestamp">[00:01:02 - 00:01:11]</div>
+                    <div class="transcript-content">During that play, I spent 70% of my time collecting information to solve this mystery of who robbed the hotel.</div>
+                    
+                    <div class="transcript-timestamp">[00:01:11 - 00:01:15]</div>
+                    <div class="transcript-stage-direction">(Audience is shown, lit in red.)</div>
+                    <div class="transcript-content">So fast forward 26 years, and not much has changed.</div>
+                    
+                    <div class="transcript-timestamp">[00:01:16 - 00:01:43]</div>
+                    <div class="transcript-stage-direction">(Conor Judge turns slightly to the side, then back to the audience.)</div>
+                    <div class="transcript-content">I'm now working as a medical consultant in the hospital for half of my time, and as a senior lecturer in applied clinical data analytics in the university for the other half. The context has changed from a detective solving a mystery of who robbed a hotel, to a doctor solving a mystery of what is the cause of illness in this patient in front of me.</div>
+                    
+                    <div class="transcript-timestamp">[00:01:44 - 02:00]</div>
+                    <div class="transcript-content">And I still spend 70% of my time collecting information about the patient, and only 30% of my time making decisions on that information and communicating with the patient.</div>
+                    
+                    <!-- This continues but I'll truncate it for the example -->
+                    <div class="transcript-timestamp">[Transcript continues...]</div>
+                    <div class="transcript-content">The full transcript is available in the accompanying materials.</div>
+                </div>
+                
+                <h3 class="case-study-heading">Code Demonstration: Patient Data Structure for Multimodal AI</h3>
+                <p>An illustrative example of how patient data might be structured for processing by a multimodal AI system:</p>
+                
+                <div class="code-container">
+                    <div class="code-header">patient_data_example.json</div>
+                    <pre class="code-content">{
+  "patient_id": "P12345",
+  "timestamp": "2023-11-15T14:30:00Z",
+  "demographics": {
+    "age": 60,
+    "sex": "male"
+  },
+  "clinical_notes": {
+    "presenting_complaint": "Patient reports feeling heart 'skipping beats' for the past week.",
+    "past_medical_history": "No significant past medical history. Not currently on medications.",
+    "examination_findings": "Alert and oriented. Heart sounds irregular on auscultation."
+  },
+  "numerical_data": {
+    "blood_pressure": {"systolic": 130, "diastolic": 85, "unit": "mmHg"},
+    "heart_rate": {"value": 78, "unit": "bpm", "rhythm": "irregular"},
+    "lab_results": [
+      {"test": "Potassium", "value": 4.1, "unit": "mEq/L", "normal_range": "3.5-5.0"},
+      {"test": "TSH", "value": 2.5, "unit": "uIU/mL", "normal_range": "0.4-4.0"}
+    ]
+  },
+  "image_data": [
+    {"type": "ECG", "description": "12-lead ECG trace", "file_path": "/data/images/ecg_p12345_20231115.png"},
+    {"type": "ChestXRay", "description": "PA view", "file_path": "/data/images/cxr_p12345_20231110.dcm"},
+    {"type": "RetinalScan", "description": "Right eye fundus", "file_path": "/data/images/retina_p12345_R_20231101.jpg"}
+  ],
+  "genomic_data": {
+    "variant_call_file": "/data/genomics/p12345.vcf.gz",
+    "identified_variants_of_interest": ["placeholder_variant_1", "placeholder_variant_2"]
+  },
+  "video_data": [
+    {"type": "GaitAnalysis", "description": "Patient walking for 10 meters", "file_path": "/data/videos/gait_p12345_20231115.mp4"}
+  ]
+}</pre>
+                </div>
+                
+                <!-- Eleven Labs AI Assistant -->
+                <div style="margin-top: var(--spacing-xl); padding: var(--spacing-lg); background-color: var(--surface-primary); border-radius: var(--radius-lg); border: 1px solid var(--border-primary); box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+                    <h3 style="margin-bottom: var(--spacing-md); text-align: center; color: var(--accent-primary);">Ask About Multimodal AI in Healthcare</h3>
+                    <p style="margin-bottom: var(--spacing-lg); text-align: center; color: var(--text-secondary);">Have questions about multimodal AI applications in medicine? Ask our AI assistant powered by Eleven Labs.</p>
+                    <elevenlabs-convai agent-id="agent_01jvrn9bwcffwtvnqnejj6xyz8"></elevenlabs-convai>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AIForecast</h3>
+                    <p>An analysis of artificial intelligence development from 2025-2030</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navigate</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#overview">Overview</a></li>
+                        <li><a href="index.html#capabilities">Capabilities</a></li>
+                        <li><a href="index.html#timeline">Timeline</a></li>
+                        <li><a href="index.html#industries">Industries</a></li>
+                        <li><a href="index.html#ethics">Ethics</a></li>
+                        <li><a href="warnings.html">Expert Warnings</a></li>
+                        <li><a href="models.html">AI Models</a></li>
+                        <li><a href="supercomputing.html">Supercomputing</a></li>
+                        <li><a href="agentSGEN.html">AgentSGEN</a></li>
+                        <li><a href="aichat.html">AI Chat</a></li>
+                        <li><a href="industry-case-study.html">Case Study</a></li>
+                        <li><a href="multimodal-ai.html">Multimodal AI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>info@aiforecast.org</p>
+                    <p>© 2025 AIForecast</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="elevenlabs-config.js"></script>
+    <script>
+        // Doctor's Time Allocation Chart
+        const ctxTime = document.getElementById('timeSplitChart').getContext('2d');
+        let currentData = {
+            labels: ['Information Gathering', 'Decision Making & Communication'],
+            datasets: [{
+                label: 'Time Allocation',
+                data: [70, 30],
+                backgroundColor: ['rgba(255, 99, 132, 0.7)', 'rgba(54, 162, 235, 0.7)'],
+                borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
+                borderWidth: 1
+            }]
+        };
+        const aiImpactData = {
+            labels: ['Information Gathering (with AI)', 'Decision Making & Communication (with AI)'],
+            datasets: [{
+                label: 'Time Allocation with AI',
+                data: [40, 60], // Hypothetical improved ratio
+                backgroundColor: ['rgba(255, 206, 86, 0.7)', 'rgba(75, 192, 192, 0.7)'],
+                borderColor: ['rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],
+                borderWidth: 1
+            }]
+        };
+        let timeChart = new Chart(ctxTime, {
+            type: 'pie',
+            data: currentData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: true, text: 'Current Time Allocation' }
+                }
+            }
+        });
+        let isAiView = false;
+        document.getElementById('toggleAiButton').addEventListener('click', () => {
+            isAiView = !isAiView;
+            if (isAiView) {
+                timeChart.data = aiImpactData;
+                timeChart.options.plugins.title.text = 'Hypothetical Time Allocation with AI';
+                document.getElementById('toggleAiButton').textContent = 'Show Current Allocation';
+            } else {
+                timeChart.data = currentData;
+                timeChart.options.plugins.title.text = 'Current Time Allocation';
+                document.getElementById('toggleAiButton').textContent = 'Show Hypothetical AI Impact';
+            }
+            timeChart.update();
+        });
+        
+        // LLM Performance Chart
+        const ctxLLM = document.getElementById('llmPerformanceChart').getContext('2d');
+        const llmData = {
+            labels: ['GPT-Neo\nDec \'20', 'PubMedBERT\nJul \'21', 'BioMedLM\nOct \'22', 'Dragon\nOct \'22', 'Galactica\nNov \'22', 'FlanPaLM/GPT\nDec \'22', 'Med-PaLM\nDec \'22', 'Med-PaLM 2\nMar \'23'],
+            datasets: [{
+                label: 'Score on US Medical Licensing Exam (%)',
+                data: [33.5, 41.1, 47.1, 49.1, 50.1, 50.3, 67.2, 86.5],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(255, 99, 132, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+        
+        const llmChart = new Chart(ctxLLM, {
+            type: 'bar',
+            data: llmData,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: {
+                            display: true,
+                            text: 'Score (%)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Model'
+                        }
+                    }
+                },
+                plugins: {
+                    annotation: {
+                        annotations: {
+                            line1: {
+                                type: 'line',
+                                yMin: 60,
+                                yMax: 60,
+                                borderColor: 'rgba(255, 99, 132, 0.7)',
+                                borderWidth: 2,
+                                borderDash: [5, 5],
+                                label: {
+                                    content: 'Approximate Pass Mark (60%)',
+                                    enabled: true,
+                                    position: 'start'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
