@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentSGEN: Multi-Agent LLM System - The Future of AI: 2025-2030</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .paper-abstract {
+            background-color: var(--light-blue);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .paper-section {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .author-list {
+            font-style: italic;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .institution {
+            font-size: 0.9rem;
+            color: var(--dark-blue-gray);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .figure-container {
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .figure-container img {
+            max-width: 100%;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .figure-caption {
+            font-size: 0.9rem;
+            margin-top: var(--spacing-sm);
+            color: var(--dark-blue-gray);
+            text-align: center;
+        }
+        
+        .key-contributions {
+            background-color: var(--light-gray);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .key-contributions ul {
+            margin-top: var(--spacing-md);
+            padding-left: var(--spacing-lg);
+        }
+        
+        .reference {
+            display: flex;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .reference-number {
+            flex: 0 0 30px;
+            font-weight: 600;
+        }
+        
+        .reference-text {
+            flex: 1;
+        }
+        
+        .method-step {
+            display: flex;
+            margin-bottom: var(--spacing-lg);
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            flex: 0 0 40px;
+            height: 40px;
+            background-color: var(--accent);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: var(--spacing-md);
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .system-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .system-card {
+            background-color: var(--white);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .system-card h3 {
+            margin-bottom: var(--spacing-md);
+            color: var(--accent);
+        }
+        
+        .system-pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .pros, .cons {
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-sm);
+        }
+        
+        .pros {
+            background-color: var(--light-success);
+        }
+        
+        .cons {
+            background-color: var(--light-danger);
+        }
+        
+        .pros h4, .cons h4 {
+            margin-bottom: var(--spacing-xs);
+            font-size: 0.9rem;
+        }
+        
+        .pros ul, .cons ul {
+            padding-left: var(--spacing-md);
+            font-size: 0.9rem;
+        }
+        
+        .evaluation-results {
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .chart-placeholder {
+            background-color: var(--light-gray);
+            height: 300px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: var(--spacing-md) 0;
+        }
+        
+        @media (max-width: 768px) {
+            .system-comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .system-pros-cons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="subpage-header">
+        <nav>
+            <div class="logo">AI<span>Forecast</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html#overview">Overview</a></li>
+                <li><a href="index.html#capabilities">Capabilities</a></li>
+                <li><a href="index.html#timeline">Timeline</a></li>
+                <li><a href="index.html#industries">Industries</a></li>
+                <li><a href="index.html#ethics">Ethics</a></li>
+                <li><a href="warnings.html">Expert Warnings</a></li>
+                <li><a href="models.html">AI Models</a></li>
+                <li><a href="supercomputing.html">Supercomputing</a></li>
+                <li><a href="agentSGEN.html" class="active">AgentSGEN</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>AgentSGEN: Multi-Agent LLM System</h1>
+            <h2>Semantic Collaboration and Generation of Synthetic Data</h2>
+            <p>A breakthrough multi-agent system for generating safety-critical synthetic training data</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="paper-overview" class="section">
+            <div class="container">
+                <h2 class="section-title">Research Paper Overview</h2>
+                <div class="section-content">
+                    <div class="author-list">
+                        <p>Vu Dinh Xuan<sup>a,1</sup>, Hao Vo<sup>a,1</sup>, David Murphy<sup>b</sup> and Hoang D. Nguyen<sup>b,*</sup></p>
+                    </div>
+                    <div class="institution">
+                        <p><sup>a</sup>University of Information Technology, VNU–HCM, Ho Chi Minh City, Vietnam<br>
+                        <sup>b</sup>University College Cork, Cork, Ireland<br>
+                        <sup>1</sup>Equal contribution. <sup>*</sup>Corresponding author.</p>
+                    </div>
+                    
+                    <div class="paper-abstract">
+                        <h3>Abstract</h3>
+                        <p>The scarcity of data depicting dangerous situations presents a major obstacle to training AI systems for safety-critical applications, such as construction safety, where ethical and logistical barriers hinder real-world data collection. This creates an urgent need for an end-to-end framework to generate synthetic data that can bridge this gap. While existing methods can produce synthetic scenes, they often lack the semantic depth required for scene simulations, limiting their effectiveness. To address this, we propose a novel multi-agent framework that employs an iterative, in-the-loop collaboration between two agents: an Evaluator Agent, acting as an LLM-based judge to enforce semantic consistency and safety-specific constraints, and an Editor Agent, which generates and refines scenes based on this guidance. Powered by LLM's capabilities to reasoning and common-sense knowledge, this collaborative design produces synthetic images tailored to safety-critical scenarios. Our experiments suggest this design can generate useful scenes based on realistic specifications that address the shortcomings of prior approaches, balancing safety requirements with visual semantics. This iterative process holds promise for delivering robust, aesthetically sound simulations, offering a potential solution to the data scarcity challenge in multimedia safety applications.</p>
+                    </div>
+                    
+                    <div class="key-contributions">
+                        <h3>Key Contributions</h3>
+                        <ul>
+                            <li>Development of an end-to-end Actor–Evaluator multi-agent system for controllable 3D scene editing in safety-critical indoor scenarios</li>
+                            <li>Introduction of semantic constraints to maintain realistic spatial relationships and safety rules, ensuring each scene is both visually and semantically aligned</li>
+                            <li>Provision of a diverse dataset of synthetic 3D scenes with blocked fire escapes for AI-based construction safety applications</li>
+                            <li>Comprehensive evaluations with human raters and LLMs on randomized images, demonstrating superior performance in task completion and effectiveness</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="figure-container">
+                        <img src="images/agent-sgen-comparison.svg" alt="Comparison of 3D scene generation methods">
+                        <div class="figure-caption">
+                            <strong>Figure 1:</strong> Comparison of different approaches to 3D scene generation. AgentSGEN introduces fine-grained control through a multi-agent collaboration process, unlike traditional methods that rely on manual design or procedural algorithms.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="problem" class="section dark">
+            <div class="container">
+                <h2 class="section-title">The Challenge of Safety-Critical Data</h2>
+                <div class="section-content">
+                    <div class="text-content">
+                        <p>Safety-critical AI systems face a fundamental paradox: they need extensive training data depicting hazardous scenarios, yet collecting such data in real-world environments poses unacceptable ethical and practical challenges. For example:</p>
+                        
+                        <ul>
+                            <li>Construction sites with blocked fire exits present serious safety violations that cannot be deliberately created for data collection</li>
+                            <li>Autonomous vehicle systems require exposure to rare accident scenarios without endangering human subjects</li>
+                            <li>Emergency response systems must recognize catastrophic events without waiting for actual disasters</li>
+                        </ul>
+                        
+                        <p>While synthetic data generation offers a promising solution, existing approaches fall short in creating scenes with the necessary semantic consistency and alignment with safety objectives. Procedural generation techniques like Infinigen provide limited flexibility due to their fixed, algorithm-based solutions. More recent LLM-guided methods such as Holodeck can produce visually compelling outputs but lack the fine-grained control needed for precisely simulating targeted safety conditions.</p>
+                        
+                        <p>AgentSGEN addresses these limitations through a novel dual-agent architecture that separates high-level reasoning from execution, enabling more precise and semantically coherent scene generation while maintaining visual realism.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="methodology" class="section">
+            <div class="container">
+                <h2 class="section-title">Multi-Agent Architecture</h2>
+                <div class="section-content">
+                    <div class="text-content">
+                        <p>AgentSGEN draws inspiration from the cognitive framework of Dual Process Theory, which distinguishes between two types of thinking:</p>
+                        
+                        <ul>
+                            <li><strong>System 2 (Slow Thinking):</strong> Deliberative, reasoning-based processing that handles complex planning and constraint evaluation</li>
+                            <li><strong>System 1 (Fast Thinking):</strong> Intuitive, reactive processing that excels at quick execution and adaptation</li>
+                        </ul>
+                        
+                        <p>This cognitive division is operationalized through two specialized agents:</p>
+                        
+                        <div class="system-comparison">
+                            <div class="system-card">
+                                <h3>Evaluator Agent (System 2)</h3>
+                                <p>A reasoning-intensive agent that formulates high-level plans and validates semantic and safety constraints.</p>
+                                <div class="system-pros-cons">
+                                    <div class="pros">
+                                        <h4>Capabilities</h4>
+                                        <ul>
+                                            <li>Deep semantic reasoning</li>
+                                            <li>Constraint validation</li>
+                                            <li>High-level planning</li>
+                                            <li>Goal alignment checking</li>
+                                        </ul>
+                                    </div>
+                                    <div class="cons">
+                                        <h4>Limitations</h4>
+                                        <ul>
+                                            <li>Slower processing</li>
+                                            <li>Higher computational cost</li>
+                                            <li>Abstract rather than precise</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="system-card">
+                                <h3>Editor Agent (System 1)</h3>
+                                <p>A reactive, low-latency executor responsible for scene manipulation and fine-grained object placement.</p>
+                                <div class="system-pros-cons">
+                                    <div class="pros">
+                                        <h4>Capabilities</h4>
+                                        <ul>
+                                            <li>Fast execution</li>
+                                            <li>Precise spatial control</li>
+                                            <li>Reactive adjustment</li>
+                                            <li>Low-level optimization</li>
+                                        </ul>
+                                    </div>
+                                    <div class="cons">
+                                        <h4>Limitations</h4>
+                                        <ul>
+                                            <li>Limited reasoning depth</li>
+                                            <li>Local rather than global optimization</li>
+                                            <li>Requires guidance from Evaluator</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="figure-container">
+                            <img src="images/agent-sgen-architecture.svg" alt="AgentSGEN architecture">
+                            <div class="figure-caption">
+                                <strong>Figure 2:</strong> AgentSGEN architecture showcasing semantic planning by the Evaluator Agent and iterative scene editing by the Editor Agent.
+                            </div>
+                        </div>
+                        
+                        <h3>Workflow Process</h3>
+                        
+                        <div class="method-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Context Enrichment</h4>
+                                <p>The system starts with a high-level natural language goal (e.g., "a bedroom with doors blocked by large objects") and enriches it with structured constraint specifications covering:</p>
+                                <ul>
+                                    <li>Collision constraints (preventing object overlaps)</li>
+                                    <li>Spatial constraints (minimum clearances, grid alignments)</li>
+                                    <li>Safety constraints (access requirements, structural integrity)</li>
+                                    <li>Goal-specific constraints (derived from user intent)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="method-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Semantic Planning</h4>
+                                <p>The Evaluator Agent (embodying System 2 thinking) generates a coherent action plan by:</p>
+                                <ul>
+                                    <li>Analyzing the scene graph representation</li>
+                                    <li>Performing constraint satisfaction checking</li>
+                                    <li>Creating a sequence of spatial manipulations (translation, rotation, deletion)</li>
+                                    <li>Validating the plan against safety requirements</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="method-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Interactive Scene Editing</h4>
+                                <p>The Editor Agent (embodying System 1 thinking) executes the plan by:</p>
+                                <ul>
+                                    <li>Performing atomic scene modifications</li>
+                                    <li>Adapting to collision feedback from the environment</li>
+                                    <li>Making reactive adjustments when necessary</li>
+                                    <li>Providing updated scene renderings after each action</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="method-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Validation and Refinement</h4>
+                                <p>The Evaluator Agent re-enters the loop to:</p>
+                                <ul>
+                                    <li>Verify that all constraints have been satisfied</li>
+                                    <li>Identify any remaining issues or inconsistencies</li>
+                                    <li>Initiate additional editing cycles if needed</li>
+                                    <li>Confirm alignment with the original safety goal</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="method-step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Final Rendering and Dataset Generation</h4>
+                                <p>Once validation is complete, the system:</p>
+                                <ul>
+                                    <li>Renders the scene using a high-fidelity engine</li>
+                                    <li>Produces multiple data formats (RGB images, segmentation masks, depth maps)</li>
+                                    <li>Generates complete metadata (object labels, positions, orientations)</li>
+                                    <li>Creates a cohesive synthetic dataset ready for AI training</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="evaluation" class="section dark">
+            <div class="container">
+                <h2 class="section-title">Evaluation Results</h2>
+                <div class="section-content">
+                    <div class="text-content">
+                        <p>The effectiveness of AgentSGEN was evaluated across 53 diverse indoor scene types from the MIT Indoor Scenes dataset, including bedrooms, kitchens, offices, and more. For each room type, an initial scene was generated using Holodeck, which was then modified by AgentSGEN to satisfy the safety-critical design goal: "A {room_type}, where doors are blocked with large objects."</p>
+                        
+                        <p>Two operational configurations were tested:</p>
+                        <ul>
+                            <li><strong>With Collision Checking:</strong> Enforcing physical feasibility and realism by preventing object interpenetration</li>
+                            <li><strong>Without Collision Checking:</strong> Allowing free-form object placement to test semantic control under looser constraints</li>
+                        </ul>
+                        
+                        <h3>Human Evaluation</h3>
+                        <p>Human annotators evaluated the scenes through two complementary tasks:</p>
+                        
+                        <ol>
+                            <li><strong>Binary Task Completion:</strong> Side-by-side comparison of Holodeck baseline versus AgentSGEN's edited scenes</li>
+                            <li><strong>Goal-Oriented Evaluation:</strong> Likert-scale ratings (1-7) on effectiveness, arrangement, and scale appropriateness</li>
+                        </ol>
+                        
+                        <div class="evaluation-results">
+                            <h4>Binary Task Completion Results</h4>
+                            <p>Among 53 trials, the collision-aware AgentSGEN model was preferred 38 times, while the Holodeck baseline was selected only 6 times. Cohen's kappa score of 0.406 indicated moderate inter-annotator agreement, supporting the reliability of subjective ratings.</p>
+                            
+                            <div class="figure-container">
+                                <img src="images/agent-sgen-binary-results.svg" alt="Binary evaluation results">
+                                <div class="figure-caption">
+                                    <strong>Figure 3:</strong> Confusion matrix of binary preference judgments under two collision settings. With collision checking enabled, Cohen's kappa 0.406 indicates moderate agreement.
+                                </div>
+                            </div>
+                            
+                            <h4>Mean Opinion Scores</h4>
+                            <p>AgentSGEN with collision checking consistently achieved the highest scores across all dimensions, with average ratings above 4.5 out of 7. The Holodeck baseline consistently scored near the minimum, reflecting its lack of semantic alignment.</p>
+                            
+                            <div class="figure-container">
+                                <img src="images/agent-sgen-mean-scores.svg" alt="Mean opinion scores">
+                                <div class="figure-caption">
+                                    <strong>Figure 4:</strong> Average Likert scores (1–7 scale) for three goal-oriented evaluation questions. The collision-aware method outperforms both the collision-disabled version and the Holodeck baseline across all metrics.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>Automatic Evaluation with LLMs</h3>
+                        <p>The researchers also conducted automatic evaluations using GPT-4.1 and Gemini 2.5 Pro. Both language models strongly preferred AgentSGEN's edited scenes over the Holodeck baseline, especially when collision checking was enabled.</p>
+                        
+                        <div class="figure-container">
+                            <img src="images/agent-sgen-llm-evaluation.svg" alt="LLM evaluation results">
+                            <div class="figure-caption">
+                                <strong>Figure 5:</strong> Confusion matrix of LLM judgments under two collision settings, showing strong preference for AgentSGEN with collision checking enabled.
+                            </div>
+                        </div>
+                        
+                        <p>Interestingly, while human annotators consistently preferred AgentSGEN across all evaluation dimensions, LLMs rated Holodeck higher in arrangement and scale. This discrepancy suggests that LLMs may favor visual regularity and spatial symmetry over functional correctness, highlighting the current limitations of LLM-based visual judgment in goal-conditioned settings.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="implications" class="section">
+            <div class="container">
+                <h2 class="section-title">Implications for AI Development</h2>
+                <div class="section-content">
+                    <div class="text-content">
+                        <p>AgentSGEN represents a significant advancement in the generation of synthetic data for safety-critical applications. Its success demonstrates several important implications for AI development:</p>
+                        
+                        <h3>Multi-Agent Systems as Cognitive Models</h3>
+                        <p>The dual-agent architecture inspired by cognitive science proves effective in complex reasoning tasks. By separating slow, deliberative planning from fast, reactive execution, the system achieves higher-quality outputs than either approach could accomplish alone. This suggests that future AI systems will increasingly adopt specialized agent roles that mirror human cognitive processes.</p>
+                        
+                        <h3>LLM-Driven Simulation</h3>
+                        <p>Large language models can effectively serve as both controllers and evaluators of simulation environments, leveraging their common-sense reasoning and spatial understanding to create semantically meaningful synthetic data. As LLMs continue to advance, their ability to guide and refine simulations will likely extend to more complex domains, including robotics, healthcare, and urban planning.</p>
+                        
+                        <h3>Bridging the Data Gap</h3>
+                        <p>For domains where data collection poses ethical, practical, or safety concerns, systems like AgentSGEN offer a viable approach to generating high-quality training datasets. This capability will accelerate progress in safety-critical AI applications by reducing reliance on real-world incidents while maintaining the semantic richness needed for effective training.</p>
+                        
+                        <h3>The Role of Physical Constraints</h3>
+                        <p>The superior performance of collision-aware models in human evaluations highlights the importance of physical plausibility in synthetic data generation. Even as we create virtual environments, adhering to physical laws appears to enhance human perception of scene quality and believability. Future systems will likely incorporate increasingly sophisticated physics models to maintain this realism.</p>
+                    </div>
+                    <div class="cta-container">
+                        <div class="cta-card">
+                            <h3>Looking Forward</h3>
+                            <p>AgentSGEN demonstrates how multi-agent LLM systems can collaborate to generate high-quality synthetic data for safety-critical applications. These capabilities will likely influence many aspects of AI development in the coming years.</p>
+                            <div class="cta-buttons">
+                                <a href="index.html#timeline" class="btn-secondary">View AI Timeline</a>
+                                <a href="models.html" class="btn-primary">Explore AI Models</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AIForecast</h3>
+                    <p>An analysis of artificial intelligence development from 2025-2030</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navigate</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#overview">Overview</a></li>
+                        <li><a href="index.html#capabilities">Capabilities</a></li>
+                        <li><a href="index.html#timeline">Timeline</a></li>
+                        <li><a href="index.html#industries">Industries</a></li>
+                        <li><a href="index.html#ethics">Ethics</a></li>
+                        <li><a href="warnings.html">Expert Warnings</a></li>
+                        <li><a href="models.html">AI Models</a></li>
+                        <li><a href="supercomputing.html">Supercomputing</a></li>
+                        <li><a href="agentSGEN.html">AgentSGEN</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>info@aiforecast.org</p>
+                    <p>© 2025 AIForecast</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

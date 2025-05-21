@@ -1,5 +1,7 @@
+# Ignore Claude settings
 **/.claude/settings.local.json
-#Ignore vscode AI rules
+
+# Ignore vscode AI rules
 .github/copilot-instructions.md
 
 # Python cache files

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supercomputing Transcript - The Future of AI: 2025-2030</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to transcript display */
+        .transcript-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .transcript-entry {
+            position: relative;
+            padding-left: 120px;
+            margin-bottom: var(--spacing-lg);
+            border-left: 2px solid var(--gray);
+            padding-bottom: var(--spacing-lg);
+        }
+        
+        .transcript-entry:last-child {
+            border-left: none;
+        }
+        
+        .timestamp {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            text-align: right;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+        
+        .content {
+            background-color: var(--white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .content p {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .visual-description {
+            font-style: italic;
+            color: var(--dark-blue-gray);
+            padding: var(--spacing-md);
+            background-color: var(--light-blue);
+            border-radius: var(--radius-sm);
+            margin-top: var(--spacing-md);
+        }
+        
+        .code-snippet {
+            font-family: monospace;
+            background-color: var(--gray-dark);
+            color: var(--light-blue);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-sm);
+            margin-top: var(--spacing-md);
+            overflow-x: auto;
+            white-space: pre;
+        }
+        
+        .transcript-key {
+            background-color: var(--light-blue);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .transcript-key h3 {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .key-item {
+            display: flex;
+            margin-bottom: var(--spacing-sm);
+            align-items: center;
+        }
+        
+        .key-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: var(--spacing-sm);
+        }
+        
+        .key-speaking {
+            background-color: var(--white);
+        }
+        
+        .key-visual {
+            background-color: var(--light-blue);
+        }
+        
+        .key-technical {
+            background-color: var(--gray);
+        }
+        
+        @media (max-width: 768px) {
+            .transcript-entry {
+                padding-left: 0;
+                padding-top: 30px;
+            }
+            
+            .timestamp {
+                position: relative;
+                left: 0;
+                top: -30px;
+                width: 100%;
+                text-align: left;
+                margin-bottom: var(--spacing-xs);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="subpage-header">
+        <nav>
+            <div class="logo">AI<span>Forecast</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html#overview">Overview</a></li>
+                <li><a href="index.html#capabilities">Capabilities</a></li>
+                <li><a href="index.html#timeline">Timeline</a></li>
+                <li><a href="index.html#industries">Industries</a></li>
+                <li><a href="index.html#ethics">Ethics</a></li>
+                <li><a href="warnings.html">Expert Warnings</a></li>
+                <li><a href="models.html">AI Models</a></li>
+                <li><a href="supercomputing.html" class="active">Supercomputing</a></li>
+                <li><a href="agentSGEN.html">AgentSGEN</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Supercomputing Transcript</h1>
+            <h2>The Next Generation of Computing</h2>
+            <p>A detailed breakdown of the future of supercomputing and its impact on AI development</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="introduction" class="section">
+            <div class="container">
+                <h2 class="section-title">Video Transcript</h2>
+                <div class="section-content">
+                    <div class="text-content">
+                        <p>This page contains a detailed transcript of a video about supercomputing technology, including both spoken content and visual descriptions. The transcript explores how supercomputers are evolving to enable exascale computing, their applications in solving complex problems, and the international race to develop the most powerful machines.</p>
+                    </div>
+                    <div class="transcript-key">
+                        <h3>Transcript Key</h3>
+                        <div class="key-item">
+                            <div class="key-color key-speaking"></div>
+                            <div>Spoken Content</div>
+                        </div>
+                        <div class="key-item">
+                            <div class="key-color key-visual"></div>
+                            <div>Visual Description</div>
+                        </div>
+                        <div class="key-item">
+                            <div class="key-color key-technical"></div>
+                            <div>Code Snippets</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="transcript" class="section dark">
+            <div class="container">
+                <h2 class="section-title">Full Transcript</h2>
+                
+                <div class="transcript-container">
+                    <!-- Begin Transcript Entries -->
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">0:00 - 0:02</div>
+                        <div class="content">
+                            <p>The next generation of computing is on the horizon and it is super.</p>
+                            
+                            <div class="visual-description">
+                                <p>Animated view moving down a brightly lit, futuristic server room aisle. The server racks have glowing square patterns and light streaks moving across them. A logo (stylized "OO") appears in the top right.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">0:02 - 0:06</div>
+                        <div class="content">
+                            <p>The next generation of computing is on the horizon and it is super.</p>
+                            
+                            <div class="visual-description">
+                                <p>Close-up of a server rack with multiple blinking green and red lights on the hard drive bays. The camera is partially obscured by another rack in the foreground. The logo remains.</p>
+                                <p>Abstract animation of lines of code scrolling vertically, overlaid with a network-like grid and glowing nodes. "NODE 11" and "NODE 12" labels are visible. The logo remains.</p>
+                            </div>
+                            
+                            <div class="code-snippet">
+<title>Document-title</title>
+<!-- ... -->
+<body class="site-content">
+    <header class="site-header header-padding">
+        <!-- ... -->
+    </header>
+    <div id="site-main" class="site-main">
+        <!-- ... -->
+    </div>
+    <script>
+        var subDomains = function (domain) {
+            // ...
+            data.setMilliseconds(0);
+            data.setSeconds(0);
+            // ...
+        }
+    </script>
+</div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">0:06 - 0:19</div>
+                        <div class="content">
+                            <p>No, literally, this field of computer science and engineering is called supercomputing. And several new machines may just smash all the records with two nations neck and neck in a race to see who will get there first.</p>
+                            
+                            <div class="visual-description">
+                                <p>Animated glowing cube, with a smaller chip levitating above it, all on a circuit board-like background with data points. The logo remains.</p>
+                                <p>A woman (Maren Hunsberger) with glasses and an orange top, sitting on a couch, smiles and points her index fingers up. Posters are on the wall behind her ("SICK", "Countdown to Launch", "Seeker"). The logo remains.</p>
+                                <p>A large room filled with racks of computers, glowing with green lights, densely wired. The text "SUPERCOMPUTIN" appears and fades. The logo remains.</p>
+                                <p>Close-up of a server rack with blue and yellow ethernet cables plugged into ports. Blinking green lights are visible. The logo remains.</p>
+                                <p>Another close-up of a server rack, showing blue ethernet cables plugged in, with blue indicator lights. The logo remains.</p>
+                            </div>
+                            
+                            <div class="code-snippet">
+// Partial code visible on the left around 0:15
+nblocks = (gidsetsize + NGROUPS_PER_BLOCK - 1) / NGROUPS_PER_BLOCK;
+if (group_info)
+    return NULL;
+group_info->ngroups = gidsetsize;
+group_info->nblocks = nblocks;
+atomic_set(&group_info->usage, 1);
+
+<!-- Partial code visible on the right around 0:16 -->
+<title>jesliac-ustawe-do-tk,wiadomosc.html</link>
+obrazek width="50" src="http://m.onet.pl/m/f86393"/>
+<!-- ... -->
+</title>
+</div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">0:19 - 0:23</div>
+                        <div class="content">
+                            <p>Supercomputers are pretty different from something like your laptop.</p>
+                            
+                            <div class="visual-description">
+                                <p>The woman on the couch, Maren Hunsberger, is speaking. The logo remains. Her name "MAREN HUNSBERGER" and social media handle "@marenbea" appear with a colorful graphic. The word "ELEMENTS" is in the top left.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">0:23 - 0:28</div>
+                        <div class="content">
+                            <p>They can take up whole buildings and they're used to solve some of the world's most complicated problems.</p>
+                            
+                            <div class="visual-description">
+                                <p>View of a server room with tall black racks, lit with blue and red spotlights. The logo remains.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">0:28 - 0:35</div>
+                        <div class="content">
+                            <p>Just by looking at them, they may not seem that different from a machine like the ENIAC, the first ever programmable digital computer.</p>
+                            
+                            <div class="visual-description">
+                                <p>Black and white photo of two women in dresses operating the ENIAC computer, which is a massive wall of panels and wires. The text "ENIAC" appears in a colorful gradient. The logo remains.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">0:35 - 0:39</div>
+                        <div class="content">
+                            <p>Just by looking at them, they may not seem that different from a machine like the ENIAC, the first ever programmable digital computer. The ENIAC was capable of about 400 flops.</p>
+                            
+                            <div class="visual-description">
+                                <p>Another black and white photo of three women operating the ENIAC, plugging in cables. The logo remains.</p>
+                                <p>Black and white photo of three women interacting with a large, grid-like panel of the ENIAC. Text "400 FLOPS" appears. The logo remains.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">0:39 - 0:51</div>
+                        <div class="content">
+                            <p>FLOPS stands for floating point operations per second, which basically tells us how many calculations the computer can do per second. This makes measuring FLOPS a way of calculating computing power.</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking. A text box appears on the left:</p>
+                                <p>FLOPS<br>Measure of calculations per second for floating-point operations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">0:51 - 1:07</div>
+                        <div class="content">
+                            <p>So, the ENIAC was sitting at 400 flops in 1945. And in the 10 years it was operational, it may have performed more calculations than all of humanity had up until that point in time. That was the kind of leap digital computing gave us.</p>
+                            
+                            <div class="visual-description">
+                                <p>Black and white photo of two men in suits working on an early computer component with many wires. Text "400 FLOPS 1945" appears. The logo remains.</p>
+                                <p>Black and white photo of a man in a suit pointing to a large panel with many dials and switches. The logo remains.</p>
+                                <p>Color photo of early computer modules in a museum display case, with many vacuum tubes visible. The logo remains.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">1:07 - 1:08</div>
+                        <div class="content">
+                            <p>That was the kind of leap digital computing gave us.</p>
+                            
+                            <div class="visual-description">
+                                <p>Black and white photo of a room full of ENIAC components with several people operating them. The logo remains.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">1:08 - 1:20</div>
+                        <div class="content">
+                            <p>From that 400 flops, we upgraded to 10,000 flops. And then a million, a billion, a trillion, a quadrillion flops.</p>
+                            
+                            <div class="visual-description">
+                                <p>Abstract animation of blue hexadecimal characters on a grid. The logo remains.</p>
+                                <p>Close-up of lines of code scrolling on a dark screen.</p>
+                                <p>Maren Hunsberger speaking, with "10,000 FLOPS" text overlay.</p>
+                                <p>Solid red/purple gradient background with white text appearing:<br>
+                                1 MILLION = 10⁶ = MEGAFLOPS<br>
+                                1 BILLION = 10⁹ = GIGAFLOPS<br>
+                                1 TRILLION = 10¹² = TERAFLOPS<br>
+                                1 QUADRILLION = 10¹⁵ = PETAFLOPS<br>
+                                The logo remains.</p>
+                            </div>
+                            
+                            <div class="code-snippet">
+inverted
+KeyboardAvoidingView behavior='padding'
+<View style={styles.form}>
+    <TextInput
+        style={styles.input}
+        placeholder='Type your Message'
+        autoCorrect={false}
+        autoCapitalize='none'
+        value={message}
+        onChangeText={message => this.setState({message})}
+        blurOnSubmit={true}
+    />
+    <TouchableOpacity
+        style={styles.sendBtn}
+</div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">1:20 - 1:29</div>
+                        <div class="content">
+                            <p>That's petascale computing, and that's the level of today's most powerful supercomputers. But what's coming next is exascale computing.</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking, with "Petascale computing" text overlay.</p>
+                                <p>Close-up of white PHP code scrolling on a dark background. The text "Exascale computing" appears and zooms in. The logo remains.</p>
+                            </div>
+                            
+                            <div class="code-snippet">
+if ($sql1 = "DELETE FROM cart WHERE id=$product_id") {
+    $result = $conn->query($sql1);
+    $response = array('success' => true, 'message' => 'Product deleted successfully.');
+} else {
+    $response = array('success' => false, 'message' => 'Error deleting product from cart.');
+}
+// ...
+if ($sql1 = "UPDATE cart SET quantity = $quantity WHERE id=$product_id") {
+    $result = $conn->query($sql1);
+// ...
+</div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">1:29 - 1:36</div>
+                        <div class="content">
+                            <p>That's, let's see, 18 zeros, one quintillion operations per second.</p>
+                            
+                            <div class="visual-description">
+                                <p>Same PHP code background. Text overlay: "1,000,000,000,000,000,000 = exaFLOPS". The logo remains.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">1:36 - 1:53</div>
+                        <div class="content">
+                            <p>Exascale computers will be a thousand times better performing than the petascale machines we have now. Or, to put it another way, if you wanted to do the same number of calculations that an exascale computer can do in one second, you'd be doing math for 31 billion years.</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">1:53 - 1:56</div>
+                        <div class="content">
+                            <p>So, what the heck do we need that kind of computing power for?</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">1:56 - 2:10</div>
+                        <div class="content">
+                            <p>Large scale phenomena like climate change have so many moving parts that are all affected by minute changes in all the other variables. And the effect of these changes need to be projected forward in time.</p>
+                            
+                            <div class="visual-description">
+                                <p>Satellite view of a massive hurricane.</p>
+                                <p>Aerial view of a wildfire line burning across a grassy field.</p>
+                                <p>Close-up of a large glacier calving, with water rushing down.</p>
+                                <p>Storks and other birds scavenging in a landfill full of plastic.</p>
+                                <p>Aerial view of a large forest fire with smoke billowing, near a body of water.</p>
+                                <p>Underwater shot of a seahorse trapped inside a plastic bag.</p>
+                                <p>Weather radar animation of a hurricane making landfall.</p>
+                                <p>People in a control room with headsets, looking at screens showing earth data visualizations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">2:10 - 2:32</div>
+                        <div class="content">
+                            <p>That's a really complex situation to simulate. On the other end of the spectrum, molecular interactions between cells and drug compounds are also extremely complex, just on the nano scale. And computer models of these interactions allow us to see the actual mechanisms of how diseases make us sick and how different medicines could interrupt those interactions to make us better.</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking.</p>
+                                <p>Scientist's gloved hand working with samples in well plates on a lab shaker.</p>
+                                <p>Microscopic view of red and orange cells, possibly blood cells or cellular structures.</p>
+                                <p>Animation of transparent capsules filled with molecular structures falling.</p>
+                                <p>Animation of a single transparent capsule with two different molecular structures (DNA-like) inside.</p>
+                                <p>Abstract animation of a blue, glowing, networked particle stream.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">2:32 - 2:41</div>
+                        <div class="content">
+                            <p>Exascale computing will provide us with more power, speed, specificity, and real world accuracy than we've ever had before.</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking.</p>
+                                <p>Server racks in a clean, modern server room.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">2:41 - 2:52</div>
+                        <div class="content">
+                            <p>It'll be kind of like looking through a new pair of prescription glasses, bringing into sharper focus everything from chemistry to genetics, aircraft design, to nuclear physics, even energy grid planning.</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking.</p>
+                                <p>Close-up of an optometrist fitting a pair of glasses onto a Black woman's face, eye chart in the background.</p>
+                                <p>Abstract, colorful, microscopic view of a chemical reaction or cell division.</p>
+                                <p>Close-up, abstract view of an orange, viscous substance with bubbles forming and rising.</p>
+                                <p>Gloved hand using tweezers to place a piece of what looks like cultured meat or tissue into a petri dish.</p>
+                                <p>Airplane under construction in a hangar, with digital overlays showing data points and analytics.</p>
+                                <p>Animation of a futuristic toroidal fusion reactor or particle accelerator.</p>
+                                <p>Nighttime aerial view of a brightly lit cityscape with sprawling highways.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">2:52 - 2:53</div>
+                        <div class="content">
+                            <p>Even energy grid planning.</p>
+                            
+                            <div class="visual-description">
+                                <p>Abstract animation of a grid of green and blue glowing squares with alphanumeric characters.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">2:53 - 3:05</div>
+                        <div class="content">
+                            <p>But increased performance comes with increased cost. Exascale systems have price tags in the hundreds of millions of dollars. And they require huge amounts of electricity to run.</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">3:05 - 3:15</div>
+                        <div class="content">
+                            <p>And just like with humans, running makes computers hot. So computing facilities consume even more energy and cold water to cool computers down and keep them at optimum performance.</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking.</p>
+                                <p>Racks of crypto mining rigs or similar hardware, glowing green, with fans spinning.</p>
+                                <p>Close-up of the back of server racks showing numerous black cables neatly bundled and plugged in.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">3:15 - 3:30</div>
+                        <div class="content">
+                            <p>Computers that are unrivaled in their power are also unrivaled in their complexity. Exascale machines will, for lack of a better word, think differently than their predecessors, so we're going to need to think about connecting their processors to each other in a different way.</p>
+                            
+                            <div class="visual-description">
+                                <p>Another close-up of the back of server racks, focusing on blinking indicator lights and cable management.</p>
+                                <p>Close-up of server blades with copper heat pipes visible.</p>
+                                <p>Close-up of server modules with green and orange indicator lights.</p>
+                                <p>View inside a server rack with many blades and copper cooling pipes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">3:30 - 3:42</div>
+                        <div class="content">
+                            <p>Not only that, but exascale processors then have to connect to memory and storage in a different way too. And both of these will have to contain unprecedented amounts of information.</p>
+                            
+                            <div class="visual-description">
+                                <p>Close-up of the back of server racks with densely packed cables.</p>
+                                <p>Maren Hunsberger speaking.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">3:42 - 3:57</div>
+                        <div class="content">
+                            <p>And from the software side, you essentially have to talk to these computers in a different way than you do to petascale computers. So, if you want to take codes that were designed to run on petascale computers and now run them on an exascale machine, you got to do some major code overhaul.</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking.</p>
+                                <p>Code scrolling on a dark screen (same as 1:09-1:12).</p>
+                                <p>Different, more complex C-like code scrolling over the previous code.</p>
+                            </div>
+                            
+                            <div class="code-snippet">
+struct group_info init_groups = { .usage = ATOMIC_INIT(2) };
+struct group_info *group_info;
+int nblocks;
+int i;
+
+nblocks = (gidsetsize + NGROUPS_PER_BLOCK - 1) / NGROUPS_PER_BLOCK;
+/* Make sure we always allocate at least one indirect block pointer */
+nblocks = nblocks ? : 1;
+group_info = kmalloc(sizeof(*group_info) + nblocks*sizeof(gid_t *), GFP_USER);
+if (!group_info)
+    return NULL;
+group_info->ngroups = gidsetsize;
+group_info->nblocks = nblocks;
+atomic_set(&group_info->usage, 1);
+if (gidsetsize <= NGROUPS_SMALL)
+</div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">3:57 - 3:59</div>
+                        <div class="content">
+                            <p>you got to do some major code overhaul.</p>
+                            
+                            <div class="visual-description">
+                                <p>Abstract animation of blue binary code forming a wave-like surface.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">3:59 - 4:11</div>
+                        <div class="content">
+                            <p>Which all means the dawn of exascale requires huge innovations in everything from the physical architecture of the hardware, to the software programming, to engineering the buildings these computers will live in.</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking.</p>
+                                <p>View inside a densely wired server rack with green blinking lights.</p>
+                                <p>Close-up of a CPU being held between two fingers, showing the pins.</p>
+                                <p>Two IT technicians in a server room, one pointing at code on a laptop screen.</p>
+                                <p>View down a dark server room aisle, similar to the opening shot but less bright.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">4:11 - 4:15</div>
+                        <div class="content">
+                            <p>So, when can we expect to see these mega machines?</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking.</p>
+                                <p>Animated blue lines of text data scrolling vertically, transitioning to interconnected binary digits.</p>
+                                <p>Abstract network of glowing blue binary digits (0s and 1s) connected by lines.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">4:15 - 4:24</div>
+                        <div class="content">
+                            <p>The first exascale machine in the US was slated to arrive at Argonne National Lab sometime in 2021, but it's been delayed.</p>
+                            
+                            <div class="visual-description">
+                                <p>Close-up of server modules with blinking green "ACT" and "LINK" lights, and red "ALM" (alarm) lights. Yellow fiber optic cables are in the foreground.</p>
+                                <p>Maren Hunsberger speaking, "Argonne National Laboratory" text overlay.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">4:24 - 4:34</div>
+                        <div class="content">
+                            <p>That supercomputer is called Aurora, and its team plans to use Intel GPU computer chips. The slow development of which seems to be what's holding things up.</p>
+                            
+                            <div class="visual-description">
+                                <p>Rendering of the "Aurora" supercomputer: a row of large black server cabinets with "Aurora" and logos (Argonne National Laboratory, U.S. Department of Energy, Intel, Hewlett Packard Enterprise) on the side panels. Text overlay: "Aurora", "Argonne National Laboratory".</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">4:34 - 4:48</div>
+                        <div class="content">
+                            <p>So, the machine that was supposed to come online second has now moved into first place. That's the Frontier supercomputer, which may come online this year at Oak Ridge National Lab and will clock in at 1.5 exaFLOPS.</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking.</p>
+                                <p>Rendering of the "Frontier" supercomputer: similar large black server cabinets with "FRONTIER" and logos (Oak Ridge National Laboratory, U.S. Department of Energy, Cray, AMD) on the side panels. Text overlay: "Frontier", "Oak Ridge National Laboratory".</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">4:48 - 4:58</div>
+                        <div class="content">
+                            <p>And in 2023, Frontier will be followed by El Capitan at Lawrence Livermore National Lab, a machine capable of two whole exaFLOPS.</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking, "1.5 exaFLOPS" text overlay.</p>
+                                <p>Rendering of the "El Capitan" supercomputer: similar large black server cabinets with "EL CAPITAN" and logos (U.S. Department of Energy, NNSA, Lawrence Livermore National Laboratory, Cray) and a mountain vista on the side panels. Text overlay: "El Capitan", "Lawrence Livermore National Laboratory", "2 exaFLOPS".</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">4:58 - 5:04</div>
+                        <div class="content">
+                            <p>That's a heck of a lot of power. But it remains to be seen if the US will actually get to exascale computing first.</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">5:04 - 5:12</div>
+                        <div class="content">
+                            <p>Because China is also bringing three new exascale machines into the spotlight and may very well get there before anyone else.</p>
+                            
+                            <div class="visual-description">
+                                <p>A man in a lab coat inspects the "Sunway TaihuLight" supercomputer, a large system with Chinese characters on its side. Text overlay: "Sunway TaihuLight".</p>
+                                <p>Another view of the "Sunway TaihuLight" supercomputer. Text overlay: "Sunway TaihuLight".</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">5:12 - 5:22</div>
+                        <div class="content">
+                            <p>Because even though the US and China are leading the pack, many other countries from Japan to places in Europe also have exascale machines in the works.</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking.</p>
+                                <p>Japan's "Fugaku" supercomputer: rows of server racks with green internal lighting. Text overlay: "Japan's Fugaku supercomputer".</p>
+                                <p>The back of Germany's HLR S supercomputer, showing a dense array of colorful cables and cooling fans. Text overlay: "Germany's HLRS".</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">5:22 - 5:41</div>
+                        <div class="content">
+                            <p>Again, the machine hardware itself is really just the skeleton of exascale computing. To actually bring that maximum power to bear on some of the most complicated problems scientists are trying to untangle today, there's a whole lot more going on behind the scenes. So, software engineers, now's your time to shine.</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking.</p>
+                                <p>Scientist in a lab coat, goggles, and mask looking through a microscope.</p>
+                                <p>Computer screen in a lab showing microscopic images of cells and DNA analysis data.</p>
+                                <p>Another scientist in a lab, working at a computer next to a microscope, analyzing data.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">5:41 - 5:51</div>
+                        <div class="content">
+                            <p>If you want more on boundary-breaking computing innovations, then check out our video on hot quantum computing chips here. And if you have other computational news you want us to cover, let us know in the comments below.</p>
+                            
+                            <div class="visual-description">
+                                <p>Maren Hunsberger speaking. The screen transitions to black with credits on the right:<br>
+                                ELEMENTS<br>
+                                PRODUCERS: Semany Gashaw & Victoria Barrios<br>
+                                ASSOCIATE PRODUCERS: Lauren Iverson & Lizzie Philip<br>
+                                WRITER & HOST: Maren Hunsberger<br>
+                                EDITOR: Lee Mould<br>
+                                IMAGES PROVIDED BY: Getty Images<br>
+                                MUSIC PROVIDED BY: APM<br>
+                                SUBSCRIBE (with a toggle icon)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transcript-entry">
+                        <div class="timestamp">5:51 - 5:57</div>
+                        <div class="content">
+                            <p>Make sure you subscribe to Seeker for all your coverage of bits and bytes, and as always, thanks so much for watching. I'll see you in the next one.</p>
+                            
+                            <div class="visual-description">
+                                <p>Seeker logo animation.</p>
+                                <p>Black screen.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- End Transcript Entries -->
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="section">
+            <div class="container">
+                <h2 class="section-title">Implications for AI Development</h2>
+                <div class="section-content">
+                    <div class="text-content">
+                        <h3>Exascale Computing and AI Advancement</h3>
+                        <p>The development of exascale supercomputers has profound implications for artificial intelligence research and development. As models grow in size and complexity, they require increasingly powerful computational resources for both training and inference.</p>
+                        
+                        <p>Exascale computing will enable:</p>
+                        
+                        <ul>
+                            <li>Training of larger, more complex AI models with trillions of parameters</li>
+                            <li>More accurate simulations of real-world phenomena for AI training data</li>
+                            <li>Faster iteration cycles for AI research and development</li>
+                            <li>New approaches to AI that were previously computationally infeasible</li>
+                            <li>Processing of larger multimodal datasets for more comprehensive AI understanding</li>
+                        </ul>
+                        
+                        <h3>International Competition</h3>
+                        <p>The race between nations to develop the first exascale computers reflects the strategic importance of computational leadership in AI development. Countries that possess the most advanced computing infrastructure gain advantages in scientific research, economic development, and potentially military applications.</p>
+                        
+                        <p>This computational arms race is likely to accelerate both hardware and software innovations across the global AI ecosystem, with benefits extending beyond the initial applications in scientific research.</p>
+                    </div>
+                    <div class="cta-container">
+                        <div class="cta-card">
+                            <h3>Explore Related Content</h3>
+                            <p>Understanding supercomputing infrastructure provides valuable context for the AI capability forecasts presented elsewhere on this site.</p>
+                            <div class="cta-buttons">
+                                <a href="index.html#timeline" class="btn-secondary">View AI Timeline</a>
+                                <a href="models.html" class="btn-primary">Explore AI Models</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AIForecast</h3>
+                    <p>An analysis of artificial intelligence development from 2025-2030</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navigate</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#overview">Overview</a></li>
+                        <li><a href="index.html#capabilities">Capabilities</a></li>
+                        <li><a href="index.html#timeline">Timeline</a></li>
+                        <li><a href="index.html#industries">Industries</a></li>
+                        <li><a href="index.html#ethics">Ethics</a></li>
+                        <li><a href="warnings.html">Expert Warnings</a></li>
+                        <li><a href="models.html">AI Models</a></li>
+                        <li><a href="supercomputing.html">Supercomputing</a></li>
+                        <li><a href="agentSGEN.html">AgentSGEN</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>info@aiforecast.org</p>
+                    <p>© 2025 AIForecast</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
