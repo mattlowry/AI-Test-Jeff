@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Future of AI: 2025-2030</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/dropdown.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,17 +18,40 @@
             <div class="logo">AI<span>Forecast</span></div>
             <ul class="nav-links">
                 <li><a href="#overview">Overview</a></li>
-                <li><a href="capabilities.html">Capabilities</a></li>
-                <li><a href="timeline.html">Timeline</a></li>
-                <li><a href="industries.html">Industries</a></li>
-                <li><a href="ethics.html">Ethics</a></li>
-                <li><a href="warnings.html">Expert Warnings</a></li>
-                <li><a href="models.html">AI Models</a></li>
-                <li><a href="supercomputing.html">Supercomputing</a></li>
-                <li><a href="agentSGEN.html">AgentSGEN</a></li>
+                
+                <!-- AI Capabilities Dropdown -->
+                <li>
+                    <a href="#" class="dropdown-toggle">AI Capabilities</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="capabilities.html">Core Capabilities</a></li>
+                        <li><a href="timeline.html">Technical Timeline</a></li>
+                        <li><a href="models.html">AI Models</a></li>
+                        <li><a href="supercomputing.html">Supercomputing</a></li>
+                        <li><a href="agentSGEN.html">AgentSGEN</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Applications & Industries Dropdown -->
+                <li>
+                    <a href="#" class="dropdown-toggle">Applications</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="industries.html">Industry Impact</a></li>
+                        <li><a href="multimodal-ai.html">Multimodal AI</a></li>
+                        <li><a href="industry-case-study.html">Industry Case Study</a></li>
+                        <li><a href="social-ads.html">Social Media Advertising</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Ethics & Society Dropdown -->
+                <li>
+                    <a href="#" class="dropdown-toggle">Ethics & Society</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ethics.html">Ethical Considerations</a></li>
+                        <li><a href="warnings.html">Expert Warnings</a></li>
+                    </ul>
+                </li>
+                
                 <li><a href="aichat.html">AI Chat</a></li>
-                <li><a href="industry-case-study.html">Case Study</a></li>
-                <li><a href="multimodal-ai.html">Multimodal AI</a></li>
             </ul>
             <div class="hamburger-menu">
                 <span></span>
@@ -140,6 +164,7 @@
                         <p>AI-specific hardware will continue rapid development, with specialized chips delivering order-of-magnitude improvements in performance-per-watt for AI workloads. Distributed training across heterogeneous systems will become more efficient, allowing for cost-effective scaling.</p>
                         <p>Quantum computing may begin to play a role in specific AI applications by the end of the decade, particularly for simulation tasks and certain optimization problems relevant to model training.</p>
                     </div>
+                    
                     <div class="infographic">
                         <div class="image-container">
                             <img src="images/ai-progression.svg" alt="AI Progression Timeline" class="responsive-img">
@@ -342,9 +367,9 @@
                     <h3>Navigate</h3>
                     <ul class="footer-links">
                         <li><a href="#overview">Overview</a></li>
-                        <li><a href="capabilities.html">Capabilities</a></li>
-                        <li><a href="timeline.html">Timeline</a></li>
-                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="capabilities.html">Core Capabilities</a></li>
+                        <li><a href="timeline.html">Technical Timeline</a></li>
+                        <li><a href="industries.html">Industry Impact</a></li>
                         <li><a href="ethics.html">Ethics</a></li>
                         <li><a href="warnings.html">Expert Warnings</a></li>
                         <li><a href="models.html">AI Models</a></li>
@@ -352,6 +377,8 @@
                         <li><a href="agentSGEN.html">AgentSGEN</a></li>
                         <li><a href="aichat.html">AI Chat</a></li>
                         <li><a href="industry-case-study.html">Case Study</a></li>
+                        <li><a href="multimodal-ai.html">Multimodal AI</a></li>
+                        <li><a href="social-ads.html">Social Ads</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -364,6 +391,8 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/mega-menu.js"></script>
     <script src="elevenlabs-config.js"></script>
 </body>
 </html>
