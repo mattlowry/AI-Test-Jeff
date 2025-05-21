@@ -8,168 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .paper-abstract {
-            background-color: var(--light-blue);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-md);
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .paper-section {
-            margin-bottom: var(--spacing-xl);
-        }
-        
-        .author-list {
-            font-style: italic;
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .institution {
-            font-size: 0.9rem;
-            color: var(--dark-blue-gray);
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .figure-container {
-            margin: var(--spacing-lg) 0;
-        }
-        
-        .figure-container img {
-            max-width: 100%;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .figure-caption {
-            font-size: 0.9rem;
-            margin-top: var(--spacing-sm);
-            color: var(--dark-blue-gray);
-            text-align: center;
-        }
-        
-        .key-contributions {
-            background-color: var(--light-gray);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-md);
-            margin: var(--spacing-lg) 0;
-        }
-        
-        .key-contributions ul {
-            margin-top: var(--spacing-md);
-            padding-left: var(--spacing-lg);
-        }
-        
-        .reference {
-            display: flex;
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        .reference-number {
-            flex: 0 0 30px;
-            font-weight: 600;
-        }
-        
-        .reference-text {
-            flex: 1;
-        }
-        
-        .method-step {
-            display: flex;
-            margin-bottom: var(--spacing-lg);
-            align-items: flex-start;
-        }
-        
-        .step-number {
-            flex: 0 0 40px;
-            height: 40px;
-            background-color: var(--accent);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            margin-right: var(--spacing-md);
-        }
-        
-        .step-content {
-            flex: 1;
-        }
-        
-        .system-comparison {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-lg);
-            margin: var(--spacing-lg) 0;
-        }
-        
-        .system-card {
-            background-color: var(--white);
-            border-radius: var(--radius-md);
-            padding: var(--spacing-lg);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .system-card h3 {
-            margin-bottom: var(--spacing-md);
-            color: var(--accent);
-        }
-        
-        .system-pros-cons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-md);
-        }
-        
-        .pros, .cons {
-            padding: var(--spacing-sm);
-            border-radius: var(--radius-sm);
-        }
-        
-        .pros {
-            background-color: var(--light-success);
-        }
-        
-        .cons {
-            background-color: var(--light-danger);
-        }
-        
-        .pros h4, .cons h4 {
-            margin-bottom: var(--spacing-xs);
-            font-size: 0.9rem;
-        }
-        
-        .pros ul, .cons ul {
-            padding-left: var(--spacing-md);
-            font-size: 0.9rem;
-        }
-        
-        .evaluation-results {
-            margin: var(--spacing-lg) 0;
-        }
-        
-        .chart-placeholder {
-            background-color: var(--light-gray);
-            height: 300px;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: var(--spacing-md) 0;
-        }
-        
-        @media (max-width: 768px) {
-            .system-comparison {
-                grid-template-columns: 1fr;
-            }
-            
-            .system-pros-cons {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
 <body>
     <header class="subpage-header">
@@ -185,6 +24,7 @@
                 <li><a href="models.html">AI Models</a></li>
                 <li><a href="supercomputing.html">Supercomputing</a></li>
                 <li><a href="agentSGEN.html" class="active">AgentSGEN</a></li>
+                <li><a href="aichat.html">AI Chat</a></li>
             </ul>
         </nav>
         <div class="hero">
@@ -427,7 +267,7 @@
                             <p>Among 53 trials, the collision-aware AgentSGEN model was preferred 38 times, while the Holodeck baseline was selected only 6 times. Cohen's kappa score of 0.406 indicated moderate inter-annotator agreement, supporting the reliability of subjective ratings.</p>
                             
                             <div class="figure-container">
-                                <img src="images/agent-sgen-binary-results.svg" alt="Binary evaluation results">
+                                <div id="binaryResultsHeatmap"></div>
                                 <div class="figure-caption">
                                     <strong>Figure 3:</strong> Confusion matrix of binary preference judgments under two collision settings. With collision checking enabled, Cohen's kappa 0.406 indicates moderate agreement.
                                 </div>
@@ -437,7 +277,7 @@
                             <p>AgentSGEN with collision checking consistently achieved the highest scores across all dimensions, with average ratings above 4.5 out of 7. The Holodeck baseline consistently scored near the minimum, reflecting its lack of semantic alignment.</p>
                             
                             <div class="figure-container">
-                                <img src="images/agent-sgen-mean-scores.svg" alt="Mean opinion scores">
+                                <div id="meanOpinionScoresChart"></div>
                                 <div class="figure-caption">
                                     <strong>Figure 4:</strong> Average Likert scores (1–7 scale) for three goal-oriented evaluation questions. The collision-aware method outperforms both the collision-disabled version and the Holodeck baseline across all metrics.
                                 </div>
@@ -448,7 +288,7 @@
                         <p>The researchers also conducted automatic evaluations using GPT-4.1 and Gemini 2.5 Pro. Both language models strongly preferred AgentSGEN's edited scenes over the Holodeck baseline, especially when collision checking was enabled.</p>
                         
                         <div class="figure-container">
-                            <img src="images/agent-sgen-llm-evaluation.svg" alt="LLM evaluation results">
+                            <div id="llmEvaluationHeatmap"></div>
                             <div class="figure-caption">
                                 <strong>Figure 5:</strong> Confusion matrix of LLM judgments under two collision settings, showing strong preference for AgentSGEN with collision checking enabled.
                             </div>
@@ -513,6 +353,7 @@
                         <li><a href="models.html">AI Models</a></li>
                         <li><a href="supercomputing.html">Supercomputing</a></li>
                         <li><a href="agentSGEN.html">AgentSGEN</a></li>
+                        <li><a href="aichat.html">AI Chat</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
