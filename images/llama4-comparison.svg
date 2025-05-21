@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="llama-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4a7cff" />
+      <stop offset="100%" stop-color="#3d62cc" />
+    </linearGradient>
+    <linearGradient id="behemoth-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b45aff" />
+      <stop offset="100%" stop-color="#8a41c9" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15" />
+    </filter>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Inter, sans-serif" font-size="24" font-weight="700" text-anchor="middle" fill="#2c3437">Meta's Llama 4 Series Comparison</text>
+  
+  <!-- Model Cards -->
+  <g id="llama-scout-card" transform="translate(50, 80)">
+    <rect x="0" y="0" width="220" height="300" rx="8" fill="white" filter="url(#shadow)" />
+    <rect x="0" y="0" width="220" height="60" rx="8" fill="url(#llama-gradient)" />
+    <rect x="0" y="40" width="220" height="20" rx="0" fill="url(#llama-gradient)" />
+    <text x="110" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="white">Llama 4 Scout</text>
+    <text x="180" y="54" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="end" fill="white">AVAILABLE NOW</text>
+    
+    <!-- Specs -->
+    <g transform="translate(20, 80)">
+      <text font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Parameters:</text>
+      <text x="180" y="0" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4a7cff">17 Billion</text>
+      
+      <text y="30" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Experts:</text>
+      <text x="180" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4d5559">16</text>
+      
+      <text y="60" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Context Window:</text>
+      <text x="180" y="60" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="end" fill="#4a7cff">10 Million Tokens</text>
+      
+      <text y="90" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Hardware:</text>
+      <text x="180" y="90" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4d5559">Single H100 GPU</text>
+      
+      <text y="120" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Key Feature:</text>
+      <text x="180" y="120" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4d5559">Massive Context</text>
+      
+      <text y="150" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Cost/Million:</text>
+      <text x="180" y="150" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4d5559">$0.15 input / $0.40 output</text>
+      
+      <text y="180" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Multimodal:</text>
+      <text x="180" y="180" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4d5559">Yes</text>
+    </g>
+  </g>
+  
+  <g id="llama-maverick-card" transform="translate(290, 80)">
+    <rect x="0" y="0" width="220" height="300" rx="8" fill="white" filter="url(#shadow)" />
+    <rect x="0" y="0" width="220" height="60" rx="8" fill="url(#llama-gradient)" />
+    <rect x="0" y="40" width="220" height="20" rx="0" fill="url(#llama-gradient)" />
+    <text x="110" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="white">Llama 4 Maverick</text>
+    <text x="180" y="54" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="end" fill="white">AVAILABLE NOW</text>
+    
+    <!-- Specs -->
+    <g transform="translate(20, 80)">
+      <text font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Parameters:</text>
+      <text x="180" y="0" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4a7cff">17 Billion</text>
+      
+      <text y="30" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Experts:</text>
+      <text x="180" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="end" fill="#4a7cff">128</text>
+      
+      <text y="60" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Performance:</text>
+      <text x="180" y="60" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4d5559">GPT-4o Level</text>
+      
+      <text y="90" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Compute:</text>
+      <text x="180" y="90" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4d5559">~50% of competitors</text>
+      
+      <text y="120" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Key Feature:</text>
+      <text x="180" y="120" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4d5559">Efficiency + Performance</text>
+      
+      <text y="150" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Cost vs. GPT-4:</text>
+      <text x="180" y="150" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4d5559">Significantly Lower</text>
+      
+      <text y="180" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Multimodal:</text>
+      <text x="180" y="180" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4d5559">Yes</text>
+    </g>
+  </g>
+  
+  <g id="llama-behemoth-card" transform="translate(530, 80)">
+    <rect x="0" y="0" width="220" height="300" rx="8" fill="white" filter="url(#shadow)" />
+    <rect x="0" y="0" width="220" height="60" rx="8" fill="url(#behemoth-gradient)" />
+    <rect x="0" y="40" width="220" height="20" rx="0" fill="url(#behemoth-gradient)" />
+    <text x="110" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="white">Llama 4 Behemoth</text>
+    <text x="180" y="54" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="end" fill="white">IN TRAINING</text>
+    
+    <!-- Specs -->
+    <g transform="translate(20, 80)">
+      <text font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Active Parameters:</text>
+      <text x="180" y="0" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="end" fill="#b45aff">288 Billion</text>
+      
+      <text y="30" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Total Parameters:</text>
+      <text x="180" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="end" fill="#b45aff">~2 Trillion</text>
+      
+      <text y="60" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Role:</text>
+      <text x="180" y="60" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4d5559">Teacher Model</text>
+      
+      <text y="90" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Expected Release:</text>
+      <text x="180" y="90" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4d5559">Late 2025</text>
+      
+      <text y="120" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Target Performance:</text>
+      <text x="180" y="120" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4d5559">Beyond GPT-4.5/Claude 3.7</text>
+      
+      <text y="150" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Strengths:</text>
+      <text x="180" y="150" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4d5559">STEM Reasoning</text>
+      
+      <text y="180" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4d5559">Status:</text>
+      <text x="180" y="180" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="end" fill="#4d5559">Training In Progress</text>
+    </g>
+  </g>
+  
+  <!-- Context Window Comparison Chart -->
+  <g id="context-window-chart" transform="translate(50, 410)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#2c3437">Context Window Comparison</text>
+    <rect x="0" y="10" width="700" height="30" rx="4" fill="#f5f7fa" />
+    
+    <!-- GPT-4 -->
+    <rect x="0" y="10" width="128" height="30" rx="4" fill="#e1e5ea" />
+    <text x="64" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="middle" fill="#4d5559">GPT-4o: 128k</text>
+    
+    <!-- Claude 3.5 -->
+    <rect x="128" y="10" width="72" height="30" rx="0" fill="#e1e5ea" />
+    <text x="164" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="middle" fill="#4d5559">Claude 3.5: 200k</text>
+    
+    <!-- Llama 4 Scout -->
+    <rect x="200" y="10" width="500" height="30" rx="0" fill="url(#llama-gradient)" />
+    <text x="450" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="white">Llama 4 Scout: 10 Million Tokens</text>
+    
+    <!-- Scale -->
+    <line x1="0" y1="50" x2="700" y2="50" stroke="#a0a8b3" stroke-width="1" />
+    <text x="0" y="70" font-family="Inter, sans-serif" font-size="10" font-weight="400" fill="#a0a8b3">0</text>
+    <text x="200" y="70" font-family="Inter, sans-serif" font-size="10" font-weight="400" fill="#a0a8b3">200k</text>
+    <text x="400" y="70" font-family="Inter, sans-serif" font-size="10" font-weight="400" fill="#a0a8b3">~4M (scale not linear)</text>
+    <text x="680" y="70" font-family="Inter, sans-serif" font-size="10" font-weight="400" text-anchor="end" fill="#a0a8b3">10M</text>
+  </g>
+</svg>
