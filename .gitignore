@@ -1,0 +1,40 @@
+**/.claude/settings.local.json
+#Ignore vscode AI rules
+.github/copilot-instructions.md
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables - contains API keys
+.env
+
+# Database files that may contain confidential data
+*.db
+
+# MacOS system files
+.DS_Store
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Media files uploaded by users
+src/media/project_media/*
+!src/media/project_media/.gitkeep
+
+# Log files
+*.log
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
