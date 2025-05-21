@@ -20,21 +20,69 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Set active menu item based on URL
+    const currentUrl = window.location.pathname;
+    const navItems = document.querySelectorAll('.nav-links a');
+    
+    navItems.forEach(item => {
+        const href = item.getAttribute('href');
+        // If it's an exact match or if it's a section of the current page
+        if (href === currentUrl || (currentUrl === '/' && href.startsWith('#'))) {
+            item.classList.add('active');
+        }
+    });
+    
     // Navigation background change on scroll
     const nav = document.querySelector('nav');
     
     function updateNavBackground() {
-        if (window.scrollY > 100) {
-            nav.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-            nav.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.08)';
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
         } else {
-            nav.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-            nav.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+            nav.classList.remove('scrolled');
         }
     }
     
     window.addEventListener('scroll', updateNavBackground);
     updateNavBackground();
+    
+    // Mobile menu toggle
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navLinksContainer = document.querySelector('.nav-links');
+    
+    if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', function() {
+            navLinksContainer.classList.toggle('show');
+            hamburgerMenu.classList.toggle('active');
+            
+            // Prevent scrolling when menu is open
+            document.body.classList.toggle('menu-open');
+            
+            // Animate menu items
+            const menuItems = document.querySelectorAll('.nav-links li');
+            menuItems.forEach((item, index) => {
+                if (navLinksContainer.classList.contains('show')) {
+                    item.style.animation = `fadeInDown 0.5s ease forwards ${index * 0.1 + 0.2}s`;
+                    item.style.opacity = '0';
+                } else {
+                    item.style.animation = 'none';
+                    item.style.opacity = '1';
+                }
+            });
+        });
+    }
+    
+    // Close menu when clicking on a link
+    const mobileNavLinks = document.querySelectorAll('.nav-links a');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinksContainer.classList.contains('show')) {
+                navLinksContainer.classList.remove('show');
+                hamburgerMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+    });
     
     // Animate progress bars on scroll
     const progressBars = document.querySelectorAll('.progress-bar');
