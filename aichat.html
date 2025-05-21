@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
     <style>
         .chat-container {
             display: flex;
@@ -340,9 +341,10 @@
     <main>
         <section class="section">
             <div class="container">
-                <h2 class="section-title">Ask Anything About AI</h2>
-                <p class="section-subtitle">Our AI assistant uses content from this site to provide accurate, contextual responses</p>
+                <h2 class="section-title">Interactive AI Assistants</h2>
+                <p class="section-subtitle">Choose between our custom chat interface or the official Eleven Labs GPT-4 powered agent</p>
                 
+                <h3 style="margin-bottom: var(--spacing-md); color: var(--text-primary);">Custom AI Assistant Interface</h3>
                 <div class="chat-container">
                     <div class="chat-header">
                         <h3>
@@ -371,6 +373,13 @@
 
                 <div class="disclaimer">
                     This chat interface uses Eleven Labs' RAG memory system to provide answers based on the content of this website. Responses are generated using AI and may not always be accurate. For critical information, please verify with authoritative sources.
+                </div>
+                
+                <!-- Eleven Labs Official Widget -->
+                <div style="margin-top: var(--spacing-xl); padding: var(--spacing-lg); background-color: var(--surface-primary); border-radius: var(--radius-lg); border: 1px solid var(--border-primary); box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+                    <h3 style="margin-bottom: var(--spacing-md); text-align: center; color: var(--accent-primary);">Official Eleven Labs AI Assistant</h3>
+                    <p style="margin-bottom: var(--spacing-lg); text-align: center; color: var(--text-secondary);">Try our advanced conversational AI powered by Eleven Labs' GPT-4 model</p>
+                    <elevenlabs-convai agent-id="agent_01jvrn9bwcffwtvnqnejj6xyz8"></elevenlabs-convai>
                 </div>
             </div>
         </section>
